@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.view.OrdersManagerController">
+   <children>
+      <TabPane prefHeight="294.0" prefWidth="800.0">
+         <tabs>
+            <Tab closable="false" text="Orders">
+               <content>
+                  <VBox>
+                     <children>
+                        <TableView fx:id="tblOrders" prefHeight="200.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <HBox spacing="10.0">
+                           <children>
+                              <ComboBox fx:id="cmbState" promptText="State" />
+                              <Button mnemonicParsing="false" onAction="#clickSetState" text="Set State" />
+                              <Button mnemonicParsing="false" onAction="#clickDeleteOrder" text="Delete Order" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Order Items">
+               <content>
+                  <VBox>
+                     <children>
+                        <TableView fx:id="tblOrderItems" prefHeight="200.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Sold Books By Authors">
+               <content>
+                  <VBox>
+                     <children>
+                        <TableView fx:id="tblSoldBooksByAuthors" prefHeight="200.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</Pane>

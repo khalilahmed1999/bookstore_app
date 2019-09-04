@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.view.CartDialogController">
+   <center>
+      <ListView fx:id="lstvwCartItems" prefHeight="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <bottom>
+      <VBox fillWidth="false" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtAmount" prefWidth="90.0" promptText="New amount" />
+            <HBox spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clickChange" text="Change" />
+                  <Button mnemonicParsing="false" onAction="#clickDelete" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#clickOrder" text="Order" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </bottom>
+</BorderPane>

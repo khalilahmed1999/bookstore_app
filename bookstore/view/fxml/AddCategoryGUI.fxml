@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="125.0" prefWidth="250.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.view.AddCategoryController">
+   <children>
+      <TextField fx:id="txtNewCategory" promptText="Category name" />
+      <ComboBox fx:id="cmbParent" prefWidth="150.0" promptText="Parent (optional)" />
+      <HBox spacing="10.0">
+         <children>
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#clickAdd" text="Add" />
+            <Button fx:id="btnModify" disable="true" mnemonicParsing="false" onAction="#clickModify" text="Modify" />
+            <Button mnemonicParsing="false" onAction="#clickCancel" text="Cancel" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

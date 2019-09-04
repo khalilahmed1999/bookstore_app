@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="120.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bookstore.view.MessageDialogController">
+   <children>
+      <Button fx:id="btnOK" layoutX="95.0" layoutY="67.0" mnemonicParsing="false" onAction="#clickOK" prefHeight="30.0" prefWidth="60.0" text="OK" />
+      <Label fx:id="lblMessage" contentDisplay="CENTER" layoutX="23.0" layoutY="14.0" prefHeight="40.0" prefWidth="208.0" text="Message" textAlignment="CENTER" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

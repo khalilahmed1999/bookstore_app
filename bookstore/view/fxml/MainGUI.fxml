@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="topPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="bookstore.view.MainGUIController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Browsing">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#clickShowNewBooks" text="New Books" />
+                  <MenuItem mnemonicParsing="false" onAction="#clickTop5" text="TOP 5" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Cart">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#clickShowCart" text="Open Cart" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Book Data">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#clickOpenBookDataManager" text="Book Data Manager" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Category">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#clickOpenCategoryManager" text="Category Manager" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Orders">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#clickOrdersManager" text="Orders Manager" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtSearch" />
+            <Button mnemonicParsing="false" onAction="#clickSearch" text="Search" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

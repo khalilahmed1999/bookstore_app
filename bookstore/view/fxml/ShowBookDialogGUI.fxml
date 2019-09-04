@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="250.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.view.ShowBookDialogController">
+   <children>
+      <Label fx:id="lblIsbn" layoutX="30.0" layoutY="30.0" text="ISBN" />
+      <Line endX="100.0" startX="-100.0" />
+      <Label fx:id="lblTitle" text="Title">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="lblAuthors" text="Authors">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Line endX="100.0" layoutX="131.0" layoutY="58.0" startX="-100.0" />
+      <Label fx:id="lblPublisher" text="Publisher" />
+      <Label fx:id="lblYearOfPublish" text="Year of Publish" />
+      <Label fx:id="lblNumberOfPages" layoutX="30.0" layoutY="140.0" text="Number of Pages" />
+      <Line endX="100.0" layoutX="131.0" layoutY="136.0" startX="-100.0" />
+      <Label fx:id="lblPrice" layoutX="30.0" layoutY="118.0" text="Price">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <HBox spacing="10.0">
+         <children>
+            <Button fx:id="btnAddToCart" mnemonicParsing="false" onAction="#clickAddToCart" text="Add to cart" />
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#clickCancel" text="Back" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

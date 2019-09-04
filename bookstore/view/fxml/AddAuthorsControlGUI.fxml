@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root spacing="10.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Authors:" />
+      <VBox fx:id="vbxAuthors" layoutY="2.0" spacing="5.0" />
+      <HBox spacing="10.0">
+         <children>
+            <ComboBox fx:id="cmbWriter" promptText="Select a writer" />
+            <Button fx:id="btnAddWriter" mnemonicParsing="false" onAction="#clickAddNewWriter" text="+" />
+         </children>
+      </HBox>
+      <HBox spacing="10.0">
+         <children>
+            <Button fx:id="btnAddAuthor" mnemonicParsing="false" onAction="#clickAddAuthor" text="Add author" />
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clickClear" text="Clear" />
+         </children>
+      </HBox>
+   </children>
+</fx:root>
