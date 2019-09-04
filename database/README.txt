@@ -1,1 +1,1 @@
-This sql file must be imported into an Oracle database
+This sql file must be imported into an Oracle (created on 11g) database
