@@ -8,7 +8,7 @@ to a cart and order them.
 How to try it out? (on Windows)
 -------------------------------
 After downloading, an Oracle (I used version 11g) database needed to be created by importing the provided .sql file in 
-the 'database' folder.
+the 'database' folder. For a compiler you need a Java SE 8 development kit.
 
 Then with the command line you should walk into the 'bookstore' folder.
 
