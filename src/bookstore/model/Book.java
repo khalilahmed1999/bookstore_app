@@ -22,6 +22,7 @@ public class Book {
         this.category = category;
         this.numberOfPages = numberOfPages;
         this.price = price;
+        this.dateOfRegistration = new Date(new java.util.Date().getTime());
     }
 
     public long getIsbn() {

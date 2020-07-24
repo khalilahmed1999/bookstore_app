@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstore.view;
 
 import bookstore.model.Book;
@@ -15,10 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- *
- * @author Pocsai Zsolt
- */
+
 public class BookDataManagerController extends GUIController {
     @FXML private TableView<Book> tblBooks;
     @FXML private TableView<Writer> tblWriters;

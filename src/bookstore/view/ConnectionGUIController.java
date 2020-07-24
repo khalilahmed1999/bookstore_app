@@ -36,7 +36,8 @@ public class ConnectionGUIController extends GUIController{
         BookStoreControllerImpl bsci = BookStoreControllerImpl.getInstance();
         Connection conn = null;
         try {
-            conn = ConnectionBuilder.buildConnection(txtUsername.getText(), txtPassword.getText());
+            //conn = ConnectionBuilder.buildConnection(txtUsername.getText(), txtPassword.getText());
+        	conn = ConnectionBuilder.buildConnection();
         } catch (SQLException e) {
             System.err.println(e);
             return -1;

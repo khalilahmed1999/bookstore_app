@@ -6,7 +6,6 @@
 
 package bookstore.model;
 
-import bookstore.util.OrderStatesEnum;
 import java.util.ArrayList;
 
 /**

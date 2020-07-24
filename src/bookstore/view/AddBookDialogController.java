@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package bookstore.view;
 
 import bookstore.model.AuthorsOfBook;
@@ -14,10 +8,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-/**
- *
- * @author Pocsai Zsolt
- */
 public class AddBookDialogController extends GUIController {
     @FXML private VBox vbxRoot; 
     @FXML private TextField txtIsbn;

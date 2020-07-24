@@ -131,8 +131,9 @@ public class BookDAOImpl implements BookDAO {
                book.getYearOfPublish() + "', '" +
                book.getCategory() + "', '" +
                book.getNumberOfPages() + "', '" + 
-               book.getPrice() + "', " + 
-               "SYSDATE)";
+               book.getPrice() + "', '" +
+               book.getDateOfRegistration().getTime() +
+        "')";
 
         try {
             stm = dbConn.createStatement();

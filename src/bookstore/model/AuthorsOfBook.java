@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package bookstore.model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Pocsai Zsolt
- */
+
 public class AuthorsOfBook {
     private long isbn;
     private ArrayList<String> authors = new ArrayList<>();

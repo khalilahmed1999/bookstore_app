@@ -2,9 +2,9 @@ package bookstore.controller;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import bookstore.model.*;
-import bookstore.util.OrderStatesEnum;
 import bookstore.view.Dialog;
 
 public class BookStoreControllerImpl implements BookStoreController {
@@ -26,15 +26,42 @@ public class BookStoreControllerImpl implements BookStoreController {
         return instance;
     }
 
+    // It was used only with the oracle database
     public void setConnection(Connection conn) {
         dbConn = conn;
     }
     
-    public int startConnection() {
+    // It was used only with the oracle database
+    public int startConnection_old() {
         Dialog connectionDialog = new Dialog("fxml/ConnectionGUI.fxml", "Create connection");
         connectionDialog.showAndWait();
         
         if (dbConn == null) return -1;
+        
+        categoryDAO = new CategoryDAOImpl(dbConn);
+        bookDAO = new BookDAOImpl(dbConn);
+        authorsOfBookDAO = new AuthorsOfBookDAOImpl(dbConn);
+        orderDAO = new OrderDAOImpl(dbConn);
+        writerDAO = new WriterDAOImpl(dbConn);
+        
+        return 1;
+    }
+    
+    public int startConnection() {
+    	Statement stmt;
+    	String sql;
+    	
+        try {
+        	dbConn = ConnectionBuilder.buildConnection();
+        	
+        	// Enable foreign key support in SQLite
+            sql = "PRAGMA foreign_keys = ON";
+            stmt = dbConn.createStatement();
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            System.err.println(e);
+            return -1;
+        }
         
         categoryDAO = new CategoryDAOImpl(dbConn);
         bookDAO = new BookDAOImpl(dbConn);
