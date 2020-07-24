@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstore.view;
 
 import bookstore.model.Cart;
@@ -10,18 +5,13 @@ import bookstore.model.CartItem;
 import bookstore.model.Order;
 import bookstore.model.OrderItem;
 import bookstore.util.OrderStatesEnum;
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.TreeSet;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author Pocsai Zsolt
- */
+
 public class OrderDialogController extends GUIController{
     private Cart cart = Cart.getInstance();
     @FXML private ListView<CartItem> lstvwOrderItems;

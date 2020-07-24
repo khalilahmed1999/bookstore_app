@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package bookstore.model;
 
 import bookstore.util.OrderStatesEnum;
@@ -14,10 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- *
- * @author Pocsai Zsolt
- */
+
 public class OrderDAOImpl implements OrderDAO {
     Connection dbConn;
     
@@ -44,7 +35,11 @@ public class OrderDAOImpl implements OrderDAO {
                             rs.getString("telefonszam"),
                             rs.getString("email"),
                             rs.getString("szallitasi_cim"),
-                            rs.getDate("rendeles_datuma"),
+                            //rs.getDate("rendeles_datuma"),
+                            new Date(
+                            	new java.util.Date(rs.getInt("rendeles_datuma"))
+                            	.getTime() * 1000
+                            ),
                             OrderStatesEnum.valueOf(rs.getString("allapot")))
                 );
             }

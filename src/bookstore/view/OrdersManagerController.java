@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstore.view;
 
 import bookstore.model.Order;
@@ -16,10 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- *
- * @author Pocsai Zsolt
- */
+
 public class OrdersManagerController extends GUIController {
     @FXML private TableView<Order> tblOrders;
     @FXML private TableView<OrderItem> tblOrderItems;

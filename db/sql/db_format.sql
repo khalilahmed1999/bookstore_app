@@ -52,7 +52,7 @@ CREATE TABLE rendeles_tetel (
 	isbn INTEGER,
 	mennyiseg INTEGER,
 	PRIMARY KEY (rendelesszam, isbn),
-	FOREIGN KEY (rendelesszam) REFERENCES rendeles (rendlelesszam)
+	FOREIGN KEY (rendelesszam) REFERENCES rendeles (rendelesszam)
 	ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (isbn) REFERENCES konyv (isbn)
 	ON DELETE SET NULL ON UPDATE CASCADE

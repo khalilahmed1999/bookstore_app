@@ -1,6 +1,7 @@
 package bookstore.model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
@@ -11,6 +12,10 @@ public class BookDAOImpl implements BookDAO {
 
     public BookDAOImpl(Connection conn) {
         dbConn = conn;
+    }
+    
+    private Date getDate(long time) {
+    	return new Date(new java.util.Date(time).getTime() * 1000);
     }
     
     @Override
@@ -37,7 +42,8 @@ public class BookDAOImpl implements BookDAO {
                         rs.getInt("ar")
                 );
 
-                tempBook.setDateOfRegistration(rs.getDate("felvetel_datuma"));
+                //tempBook.setDateOfRegistration(rs.getDate("felvetel_datuma"));
+                tempBook.setDateOfRegistration(getDate(rs.getInt("felvetel_datuma")));
 
                 books.add(tempBook);
             }
@@ -73,7 +79,8 @@ public class BookDAOImpl implements BookDAO {
                         rs.getInt("ar")
                 );
 
-                tempBook.setDateOfRegistration(rs.getDate("felvetel_datuma"));
+                //tempBook.setDateOfRegistration(rs.getDate("felvetel_datuma"));
+                tempBook.setDateOfRegistration(getDate(rs.getInt("felvetel_datuma")));
 
                 books.add(tempBook);
             }
@@ -108,7 +115,8 @@ public class BookDAOImpl implements BookDAO {
                         rs.getInt("ar")
                 );
 
-                book.setDateOfRegistration(rs.getDate("felvetel_datuma"));
+                //book.setDateOfRegistration(rs.getDate("felvetel_datuma"));
+                book.setDateOfRegistration(getDate(rs.getInt("felvetel_datuma")));
             }
             stm.close();
         } catch (SQLException e) {
@@ -132,7 +140,7 @@ public class BookDAOImpl implements BookDAO {
                book.getCategory() + "', '" +
                book.getNumberOfPages() + "', '" + 
                book.getPrice() + "', '" +
-               book.getDateOfRegistration().getTime() +
+               book.getDateOfRegistration().getTime() / 1000 +
         "')";
 
         try {
@@ -229,27 +237,25 @@ public class BookDAOImpl implements BookDAO {
         ResultSet rs;
         
         if (category.equals("")){
-            sql = "SELECT tbl.t_isbn AS k_isbn, tbl.eladott FROM " + 
-                    "(SELECT konyv.isbn AS t_isbn, SUM(mennyiseg) AS eladott " +
-                    "FROM konyv, rendeles_tetel " +
-                    "WHERE konyv.isbn = rendeles_tetel.isbn " +
-                    "GROUP BY konyv.isbn ORDER BY eladott DESC) tbl " +
-                    "WHERE ROWNUM <= 5";
+            sql = "SELECT konyv.isbn AS isbn, SUM(mennyiseg) AS eladott " +
+            	  "FROM konyv, rendeles_tetel " +
+                  "WHERE konyv.isbn = rendeles_tetel.isbn " +
+                  "GROUP BY konyv.isbn ORDER BY eladott DESC " +
+                  "LIMIT 5";
         } else {
-            sql = "SELECT tbl.t_isbn AS k_isbn, tbl.eladott FROM " + 
-                    "(SELECT konyv.isbn AS t_isbn, SUM(mennyiseg) AS eladott " +
-                    "FROM konyv, rendeles_tetel " +
-                    "WHERE konyv.isbn = rendeles_tetel.isbn " +
-                    "AND konyv.kategoria = '" + category + "' " +
-                    "GROUP BY konyv.isbn ORDER BY eladott DESC) tbl " +
-                    "WHERE ROWNUM <= 5";
+            sql = "SELECT konyv.isbn AS isbn, SUM(mennyiseg) AS eladott " +
+            	  "FROM konyv, rendeles_tetel " +
+                  "WHERE konyv.isbn = rendeles_tetel.isbn " +
+                  "AND konyv.kategoria = '" + category + "' " +
+                  "GROUP BY konyv.isbn ORDER BY eladott DESC " +
+                  "LIMIT 5";
         }
         
         try {
             stm = dbConn.createStatement();
             rs = stm.executeQuery(sql);
             while (rs.next()) {
-                books.add(getBookByISBN(rs.getLong("k_isbn")));
+                books.add(getBookByISBN(rs.getLong("isbn")));
             }
             stm.close();
         } catch (SQLException e) {
@@ -266,15 +272,13 @@ public class BookDAOImpl implements BookDAO {
         String sql;
         ResultSet rs;
         
-        sql = "SELECT tbl.isbn AS t_isbn FROM " +
-                "(SELECT isbn FROM konyv ORDER BY felvetel_datuma DESC) tbl " +
-                "WHERE ROWNUM <= 10";
+        sql = "SELECT isbn FROM konyv ORDER BY felvetel_datuma DESC LIMIT 10";
         
         try {
             stm = dbConn.createStatement();
             rs = stm.executeQuery(sql);
             while (rs.next()) {
-                books.add(getBookByISBN(rs.getLong("t_isbn")));
+            	books.add(getBookByISBN(rs.getLong("isbn")));
             }
             stm.close();
         } catch (SQLException e) {

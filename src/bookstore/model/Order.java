@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package bookstore.model;
 
 import bookstore.util.OrderStatesEnum;
 import java.sql.Date;
 
-/**
- *
- * @author Pocsai Zsolt
- */
+
 public class Order {
     private final int orderNumber;
     private final String customerName;
