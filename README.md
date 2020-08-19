@@ -8,7 +8,7 @@ Originally it was written for Oracle Database, but that's a monster...
 
 ## Would you like to try?
 
-1. Download the [BookstoreApp.zip](dist/BookstoreApp.zip) package
+1. Download the [BookstoreApp.zip](https://github.com/zsoltpocsai/bookstore_app/releases/latest) package
 2. Unpack
-3. Navigate in your shell to the folder where the BookstoreApp.jar file is located
+3. Navigate in your command line to the folder where the BookstoreApp.jar file is located
 4. Launch the app with the command `java -jar BookstoreApp.jar`
